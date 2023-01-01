@@ -1,0 +1,225 @@
+// Header Section
+.header_wrapper {
+  padding: 30px 0;
+  background-color: rgba(white, 0.7);
+  @include media-break-width(768, 991) {
+    padding: 20px 0;
+  }
+  @include max-media-width(767) {
+    padding: 15px 0;
+  }
+  .header_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 7px 12px;
+  }
+  .logo {
+    a {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      color: #1a1a1a;
+      @include media-break-width(768, 991) {
+        font-size: 20px;
+        line-height: 30px;
+      }
+      @include max-media-width(767) {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+  nav {
+    a {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 135%;
+      color: #1a1a1a;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .nav_menu_list {
+    gap: 10px 48px;
+    margin-right: 100px;
+    @include media-break-width(992, 1199) {
+      gap: 10px 30px;
+      margin-right: 50px;
+    }
+    @include max-media-width(991) {
+      display: none !important;
+    }
+  }
+  .header_btn_list {
+    gap: 10px 40px;
+    @include media-break-width(992, 1199) {
+      gap: 10px 20px;
+    }
+    @include max-media-width(991) {
+      display: none !important;
+    }
+  }
+
+  .navbar_btn_area {
+    display: none;
+    @include max-media-width(991) {
+      display: block;
+    }
+  }
+  .navbar_btn_area {
+    button {
+      i {
+        font-size: 18px;
+        color: #1a1a1a;
+      }
+    }
+  }
+}
+.navbar_fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  box-shadow: 0 5px 4px #3737370a;
+  backdrop-filter: saturate(50%) blur(8px);
+  @include max-media-width(767) {
+    padding: 15px 0;
+  }
+}
+.login_btn_list {
+  li {
+    margin-bottom: 10px;
+  }
+  a {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 135%;
+    color: #222222;
+  }
+  .sign_up {
+    color: white;
+  }
+}
+.sign_up {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 135%;
+  padding: 14px 20px;
+  color: white !important;
+  background: #538428;
+  border-radius: 4px;
+}
+.active_menu {
+  border-top: 2px solid #e65581;
+}
+.navbar-fixed {
+  top: 0;
+  padding: 20px 0;
+  box-shadow: 0 3px 5px #097a9a;
+  background-color: #005067;
+  @include max-media-width(991) {
+    padding: 15px 0;
+  }
+}
+
+.mobile_menu_area {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  width: 50vw;
+  height: 100vh;
+  background: white;
+  padding-top: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  z-index: 100000000;
+  @include customScrollbarInner();
+  @include hover-transition();
+  display: none;
+  @include max-media-width(991) {
+    display: inline;
+  }
+  .header_button_area {
+    .default_btn {
+      margin-top: 0;
+      @include max-media-width(991) {
+        height: 45px;
+        min-width: 150px;
+      }
+    }
+  }
+
+  .mobile_menu_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    background-color: #c7c7c73d;
+    z-index: -1;
+    @include hover-transition();
+  }
+  .menu_close_icon {
+    margin-bottom: 25px;
+    padding-right: 15px;
+    i {
+      font-size: 20px;
+    }
+  }
+  .mobile_language_login_area {
+    padding-bottom: 15px;
+    .accordion-item {
+      width: 100px;
+      span {
+        margin: 0 6px;
+      }
+    }
+  }
+  .accordion-item {
+    border: none;
+    margin: 12px 0;
+    background-color: transparent !important;
+    h2,
+    h2 a,
+    button,
+    li a {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: #333333;
+      background-color: transparent !important;
+      button {
+        padding: 0;
+
+        &:not(.collapsed) {
+          background-color: transparent;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  .dropdown_menu_area {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+.mobile_active_menu {
+  color: #e65581 !important;
+}
+.navbar_active {
+  left: 0;
+  width: 50vw;
+  @include max-media-width(575) {
+    width: 80vw;
+  }
+  .mobile_menu_overlay {
+    width: 100vw;
+  }
+}
